@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package perps.v1;
+
+option go_package = "perps-exercise/gen/perps/v1;perpsv1";
+
+message Test {
+  string test_id = 1;
+}
+
+message GetTestRequest {
+  string test = 1;
+}
+
+message GetTestResposne {
+  repeated Test tests = 1;
+}
+
+service TestService {
+  rpc GetTest(GetTestRequest) returns (GetTestResposne);
+}

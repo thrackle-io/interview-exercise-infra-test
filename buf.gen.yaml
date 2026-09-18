@@ -1,0 +1,11 @@
+version: v2
+inputs:
+  - directory: proto
+plugins:
+  # Go: messages + connect service stubs -> server/gen
+  - remote: buf.build/protocolbuffers/go
+    out: server/gen
+    opt: paths=source_relative
+  - remote: buf.build/connectrpc/go
+    out: server/gen
+    opt: paths=source_relative
